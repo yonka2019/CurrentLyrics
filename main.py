@@ -53,13 +53,12 @@ def get_current_playing_track_info():
 		"Authorization": f"Bearer {config.access_tokens['ACCESS_TOKEN_SPOTIFY']}"
 	}
 	response = requests.get(url=SPOTIFY_GET_CURRENT_TRACK_URL, headers=headers)
-
 	json_resp = response.json()
+
 	track_name = json_resp['item']['name']
 	artist = [artist for artist in json_resp['item']['artists']][0]['name']
 
 	track_name = remove_addons(track_name)
-	print(track_name)
 	return track_name, artist
 
 
