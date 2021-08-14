@@ -59,7 +59,6 @@ def get_current_playing_track():
 	)
 
 	json_resp = response.json()
-	print(json_resp)
 	track_name = json_resp['item']['name']
 	artist = [artist for artist in json_resp['item']['artists']][0]['name']
 
@@ -67,7 +66,6 @@ def get_current_playing_track():
 	matches = re.search(r"^(.+) \(.+\)$", track_name)
 	if matches is not None:
 		track_name = matches.group(1)
-		print(track_name)
 
 	return track_name, artist
 
