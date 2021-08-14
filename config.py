@@ -1,4 +1,14 @@
-tokens = dict(
-	GENIUS='',
-	SPOTIFY=''
+import SpotifyAuth
+
+SPOTIFY_REFRESH_TOKEN = "AQCMLBnJONBwAHPdKFmL8aL86P4KZDkE8uWvoYFNx_kq1XM2FEIonOdx5HOPxx51cMtNOx24tfM-XHgsK4tDncxk-6kNypzQNPWi7mgFNBmIFXv8NyFrYDwBpxk47S80Lx8"
+
+spotify_auth_info = dict(
+	CLIENT_ID='97789f9766144ffa9716c22b342c7551',
+	CLIENT_SECRET='bfd4d7a629284ac5862a51412988ffdc',
+	REDIRECT_URI='https://google.co.il'
+)
+
+access_tokens = dict(
+	ACCESS_TOKEN_GENIUS='KqPm_maXDj8OaCd1_a0MKx3TCleHg8oW8BEnYgJq2MSbBjJ7xdltLI3qHatAGc7y',
+	ACCESS_TOKEN_SPOTIFY=SpotifyAuth.get_auth_token(SPOTIFY_REFRESH_TOKEN)
 )
