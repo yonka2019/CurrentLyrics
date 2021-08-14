@@ -1,0 +1,4 @@
+tokens = dict(
+	GENIUS='',
+	SPOTIFY=''
+)
