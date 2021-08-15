@@ -35,14 +35,16 @@ def get_track_lyrics_url(song_title, artist_name):
 	}
 
 	response = requests.get(url=search_url, headers=headers, data=payload)
+	print(payload)
+	print(response.text)
 	json = response.json()
 
 	song_info = None
-
+	print(json)
 	for hit in json["response"]["hits"]:
-		if artist_name.lower() in hit["result"]["primary_artist"]["name"].lower():
-			song_info = hit
-			break
+		print(1)
+		song_info = hit
+		break
 
 	if song_info:
 		web_open_url = GENIUS_URL + song_info["result"]["path"]
