@@ -63,6 +63,12 @@ def get_current_playing_track_info():
 
 
 def remove_addons(track_name):
+	# removes "SONG_NAME -->> [feat. some1] <<--"
+	matches = re.search(r"^(.+) \[.+]", track_name)
+	if matches is not None:
+		track_name = matches.group(1)
+		return track_name  # leave function
+
 	# removes "SONG_NAME -->> (feat. some1) <<--"
 	matches = re.search(r"^(.+) \(.+\)", track_name)
 	if matches is not None:
