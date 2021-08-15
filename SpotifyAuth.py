@@ -1,8 +1,8 @@
 from urllib.parse import quote
 import webbrowser
 import requests
-import config
 import base64
+import config
 import re
 
 # URLS

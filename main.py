@@ -1,8 +1,8 @@
-import requests
 import webbrowser
+import requests
 import ctypes
-import re
 import config
+import re
 
 # genius urls
 GENIUS_API_URL = "https://api.genius.com"
