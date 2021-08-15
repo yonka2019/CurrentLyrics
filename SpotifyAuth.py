@@ -13,7 +13,7 @@ TOKEN_URL = 'https://accounts.spotify.com/api/token'
 def main():
 	code = get_auth_code()
 	refresh_token = get_refresh_token(code)
-	print(refresh_token)  # refresh & view the 'refresh_token'
+	print(f"Refresh Token - {refresh_token}")  # refresh & view the 'refresh_token'
 
 
 def get_auth_code():
