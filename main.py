@@ -15,12 +15,6 @@ SPOTIFY_GET_CURRENT_TRACK_URL = 'https://api.spotify.com/v1/me/player/currently-
 def main():
 	song_title, artist_name = get_current_playing_track_info()
 	to_open_url = get_track_lyrics_url(song_title, artist_name)
-
-	if to_open_url is None:
-		ctypes.windll.user32.MessageBoxW(
-			0, f"Can't find lyrics:\n{song_title} - {artist_name}", "Genius API - Error", 0x00000010)
-		exit(1)
-
 	webbrowser.open(to_open_url)  # Genius lyrics of the current playing song
 
 
@@ -36,6 +30,11 @@ def get_track_lyrics_url(song_title, artist_name):
 
 	response = requests.get(url=search_url, headers=headers, data=payload)
 	json = response.json()
+
+	if len(json["response"]["hits"]) == 0:  # If no matches => no lyrics in genius DB
+		ctypes.windll.user32.MessageBoxW(
+			0, f"Lyrics doesn't exist\n―――――――――\nName: {song_title}\nArtist: {artist_name}", "Genius API - Error", 0x00000010)
+		exit(1)  # close program
 
 	song_info = json["response"]["hits"][0]  # first match
 
