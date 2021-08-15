@@ -7,7 +7,9 @@ Opens lyrics of the current playing song
 Opens lyrics (in https://genius.com) of the current playing song (on spotify)
 
 ### Installion (config.py)
-* SPOTIFY_REFRESH_TOKEN - Run SpotifyAuth.py, and copy the printed refresh token 
+* SPOTIFY_REFRESH_TOKEN - 
+* 1. Comment '	ACCESS_TOKEN_SPOTIFY=SpotifyAuth.get_auth_token(SPOTIFY_REFRESH_TOKEN)' line
+* 2. Run SpotifyAuth.py, and copy the printed refresh token 
 * CLIENT_ID - Get on https://developer.spotify.com/dashboard/applications/
 * CLIENT_SECRET - Get on https://developer.spotify.com/dashboard/applications/
 * REDIRECT_URI - Get on https://developer.spotify.com/dashboard/applications/
