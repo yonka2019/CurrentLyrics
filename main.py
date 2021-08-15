@@ -35,14 +35,10 @@ def get_track_lyrics_url(song_title, artist_name):
 	}
 
 	response = requests.get(url=search_url, headers=headers, data=payload)
-	print(payload)
-	print(response.text)
 	json = response.json()
 
 	song_info = None
-	print(json)
 	for hit in json["response"]["hits"]:
-		print(1)
 		song_info = hit
 		break
 
