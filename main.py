@@ -40,7 +40,7 @@ def get_track_lyrics_url(song_title, artist_name):
 	song_info = None
 
 	for hit in json["response"]["hits"]:
-		if artist_name in hit["result"]["primary_artist"]["name"]:
+		if artist_name.lower() in hit["result"]["primary_artist"]["name"].lower():
 			song_info = hit
 			break
 
