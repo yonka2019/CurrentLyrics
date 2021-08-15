@@ -35,7 +35,7 @@ def get_track_lyrics_url(song_title, artist_name):
 	if len(json["response"]["hits"]) == 0:  # If no matches => no lyrics in genius DB
 		ctypes.windll.user32.MessageBoxW(
 			0, f"Lyrics doesn't exist\n―――――――――\nName: {song_title}\nArtist: {artist_name}", "Genius API - Error", 0x00000010)
-		sys.exit("No lyrics match")  # close program
+		sys.exit("No lyrics match")  # terminate program
 
 	song_info = json["response"]["hits"][0]  # first match
 
