@@ -33,6 +33,7 @@ def get_track_lyrics_url(song_title, artist_name):
 	headers = {
 		"Authorization": f"Bearer {config.access_tokens['ACCESS_TOKEN_GENIUS']}"
 	}
+
 	response = requests.get(url=search_url, headers=headers, data=payload)
 	json = response.json()
 
@@ -52,6 +53,7 @@ def get_current_playing_track_info():
 	headers = {
 		"Authorization": f"Bearer {config.access_tokens['ACCESS_TOKEN_SPOTIFY']}"
 	}
+
 	response = requests.get(url=SPOTIFY_GET_CURRENT_TRACK_URL, headers=headers)
 	json_resp = response.json()
 
