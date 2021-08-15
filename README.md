@@ -4,7 +4,7 @@ Opens lyrics of the current playing song
 
 ## Description
 
-Opens lyrics (in genius.com) of the current playing song (on spotify)
+Opens lyrics (in https://genius.com) of the current playing song (on spotify)
 
 ### Installion (config.py)
 * SPOTIFY_REFRESH_TOKEN - Run SpotifyAuth.py, and copy the printed refresh token 
@@ -16,7 +16,7 @@ Opens lyrics (in genius.com) of the current playing song (on spotify)
 
 ## Authors
 
-Yonka
+* Yonka
 
 ## License
 
